@@ -25,12 +25,13 @@ public class SecurityConfig {
 	public PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
 	}
+    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
 
         return httpSecurity.csrf().disable()
                           .authorizeHttpRequests().requestMatchers("/user/signup","/user/login","/user/forgotPassword").permitAll().and()
-                          .authorizeHttpRequests().requestMatchers("/user/**","/autre")
+                          .authorizeHttpRequests().requestMatchers("/user/**","/autre","/category/**","/product/**")
                           .authenticated().and()
                           .sessionManagement()
                           .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
