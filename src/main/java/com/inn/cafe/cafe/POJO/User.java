@@ -23,6 +23,8 @@ import lombok.Data;
 
 @NamedQuery(name="User.getAllAdmin",query="select u.Email from User u Where u.role='admin'")
 
+@NamedQuery(name="User.findByEmail",query="select u from User u Where u.Email=:email")
+
 @Data
 @Entity
 @DynamicInsert

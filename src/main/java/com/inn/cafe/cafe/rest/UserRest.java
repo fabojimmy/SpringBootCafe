@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.inn.cafe.cafe.wrapper.UserWrapper;
 
+
 @RequestMapping(path = "/user")
 public interface UserRest {
     
@@ -25,4 +26,14 @@ public interface UserRest {
     
     @PostMapping (path = "/update")
     public ResponseEntity<String>update(@RequestBody(required = true)Map<String, String>resquestMap);
+
+    @GetMapping(value="/checkToken")
+    public ResponseEntity<String>checkToken();
+    
+    @PostMapping(value="/changePassword")
+    public ResponseEntity<String>changePassword(@RequestBody Map<String, String>requestMap);
+
+    @PostMapping(value = "/forgotPassword")
+    ResponseEntity<String>forgotPassword(@RequestBody Map<String,String>requestMap);
+    
 }

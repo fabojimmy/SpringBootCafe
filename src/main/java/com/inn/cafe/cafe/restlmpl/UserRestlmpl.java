@@ -79,6 +79,47 @@ public class UserRestlmpl implements UserRest{
          return CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
         // TODO Auto-generated method stub
     }
+    @Override
+    public ResponseEntity<String> checkToken() {
+        // TODO Auto-generated method stub
+
+        try {
+            
+            return userService.checkToken();
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+        return  CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+    @Override
+    public ResponseEntity<String> changePassword(Map<String, String> requestMap) {
+        // TODO Auto-generated method stub
+
+        try {
+            
+            return userService.changePassword(requestMap);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+    return  CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+    @Override
+    public ResponseEntity<String> forgotPassword(Map<String, String> requestMap) {
+
+        try {
+            
+            return userService.forgotPassword(requestMap);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        return CafeUtils.getResponseEntity(CafeConstants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+        // TODO Auto-generated method stub
+    }
             
     //         return new ResponseEntity<String>("Bonjour",HttpStatus.ACCEPTED);
     //     } catch (Exception e) {

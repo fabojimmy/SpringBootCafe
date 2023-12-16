@@ -40,4 +40,19 @@ public class EmailUtils {
 
     //     return cc;
     // }
+
+    // public void forgotMail(String to,String subject,String password)
+    // {
+    //     MineMessage message=emailSender.createMineMessage(to,subject,password);
+    //     MineMessageHelper helper=new MineMessageHelper(message,true);
+    //     helper.setFrom("fabojimmy04@gmail.com");
+    //     helper.setTo(to);
+    //     helper.setSubject(subject);
+
+    //     String htmlMsg="<p><b>Your Login details for Cafe Management System <b><br><b>Emaol:<b>"+to+"</b></b>Password:<br>"+password+"</b><a href=\"http://localhost:4200/\">Click here to login</a></p>";
+    //     message.setContent(htmlMsg,"text/html");
+    //     emailSender.send(message);
+    // }
+
+
 }
